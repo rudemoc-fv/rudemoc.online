@@ -1,0 +1,524 @@
+body {
+    background: #000;
+    color: #fff;
+    font-family: 'Press Start 2P', cursive;
+    margin: 0;
+    padding: 20px;
+    animation: undertale-glow 2s infinite;
+}
+
+@keyframes undertale-glow {
+    0% { text-shadow: 0 0 10px #00ffff; }
+    50% { text-shadow: 0 0 20px #00ffff, 0 0 30px #9b30ff; }
+    100% { text-shadow: 0 0 10px #00ffff; }
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    border: 4px solid #fff;
+    padding: 20px;
+    background: #000;
+    box-shadow: 0 0 15px #00ffff;
+    position: relative;
+}
+
+/* Заголовки */
+.undertale-title {
+    font-size: 24px;
+    text-align: center;
+    color: #00ffff;
+    text-shadow: 2px 2px #9b30ff;
+    margin: 20px 0;
+    padding: 10px;
+    border: 3px solid #fff;
+}
+
+/* Медиа-контент */
+.video-container {
+    border: 3px solid #9b30ff;
+    background: #000;
+    position: relative;
+    margin: 15px 0;
+}
+
+video {
+    width: 100%;
+    display: block;
+    border: 2px solid #00ffff;
+}
+
+.media {
+    max-width: 100%;
+    margin: 10px 0;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.media:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px #00ffff;
+}
+
+/* Формы и кнопки */
+.post-form, .reply-form {
+    margin: 20px 0;
+    padding: 15px;
+    border: 2px solid #00ffff;
+    background: #1a1a1a;
+}
+
+.post-form input, 
+.post-form textarea,
+.reply-form textarea {
+    background: #000;
+    border: 2px solid #fff;
+    color: #00ffff;
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+}
+
+.post-form button, 
+.reply-form button,
+.toggle-btn {
+    background: #00ffff;
+    color: #000;
+    border: 3px solid #fff;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    transition: all 0.2s;
+    margin: 5px;
+}
+
+.post-form button:hover, 
+.reply-form button:hover,
+.toggle-btn:hover {
+    background: #9b30ff;
+    transform: translateY(2px);
+}
+
+/* Треды и посты */
+.thread {
+    border: 3px solid #fff;
+    margin: 20px 0;
+    padding: 15px;
+    background: #000;
+}
+
+.post {
+    margin: 15px 0;
+    padding: 10px;
+    border-left: 4px solid #9b30ff;
+}
+
+.user-id {
+    color: #00ffff;
+    font-size: 10px;
+}
+
+.time {
+    color: #9b30ff;
+    font-size: 8px;
+}
+
+/* Прогресс-бар хранилища */
+.storage-bar {
+    border: 2px solid #fff;
+    background: #000;
+}
+
+.storage-fill {
+    background: #9b30ff;
+    height: 100%;
+}
+
+.storage-text {
+    color: #00ffff;
+    font-size: 10px;
+    padding: 3px;
+}
+
+/* Адаптация медиа-плеера */
+
+audio::-webkit-media-controls-panel {
+    background: #000;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+    filter: invert(1);
+}
+
+/* Анимация мерцания */
+@keyframes crt-flicker {
+    0% { opacity: 0.9; }
+    50% { opacity: 1; }
+    100% { opacity: 0.9; }
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.2) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    animation: crt-flicker 0.15s infinite;
+}
+
+/* Добавить в style.css */
+a.board-link {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    color: #00ffff;
+    text-decoration: none;
+    text-shadow: 0 0 8px #00ffff;
+    padding: 6px 10px;
+    margin: 5px 0;
+    display: inline-block;
+    border: 2px solid transparent;
+    transition: all 0.2s ease;
+    position: relative;
+    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Части текста внутри ссылки */
+a.board-link > :first-child {
+    color: #9b30ff;
+    text-shadow: 0 0 5px #9b30ff;
+}
+
+a.board-link > :last-child {
+    font-size: 10px;
+    margin-left: 8px;
+    opacity: 0.8;
+}
+
+/* Эффекты при наведении */
+a.board-link:hover {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: #00ffff;
+    
+    box-shadow: 0 0 15px #00ffff;
+    
+}
+
+/* Эффект нажатия */
+a.board-link:active {
+    transform: translateY(1px);
+    background: rgba(155, 48, 255, 0.2);
+    text-shadow: 0 0 12px #fff;
+    box-shadow: 0 0 5px #9b30ff inset;
+}
+
+/* Анимация "глитча" */
+@keyframes link-glitch {
+    0% { clip-path: inset(0 0 95% 0); }
+    25% { clip-path: inset(5% 0 15% 0); }
+    50% { clip-path: inset(25% 0 65% 0); }
+    75% { clip-path: inset(10% 0 35% 0); }
+    100% { clip-path: inset(0 0 95% 0); }
+}
+
+/* Эффект мерцания */
+a.board-link::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border: 1px solid #00ffff;
+    opacity: 0;
+    animation: border-flicker 1s infinite;
+}
+
+/* Для посещенных ссылок */
+a.board-link:visited > :first-child {
+    color: #ff00ff;
+    text-shadow: 0 0 8px #ff00ff;
+}
+
+/* Анимация границы */
+@keyframes border-flicker {
+    0% { opacity: 0; }
+    50% { opacity: 0.8; }
+    100% { opacity: 0; }
+}
+
+
+/* Удалить старые стили аудио */
+audio {
+    display: none;
+}
+
+.rewind-btn, .forward-btn {
+    width: 30px;
+    height: 30px;
+    background: #9b30ff;
+    border: 2px solid #fff;
+    color: #fff;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+.rewind-btn:hover, .forward-btn:hover {
+    background: #00ffff;
+    color: #000;
+}
+
+.progress-container {
+    position: relative;
+    cursor: col-resize;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    right: -4px;
+    top: -2px;
+    width: 8px;
+    height: 16px;
+    background: #fff;
+    cursor: ew-resize;
+}
+
+/* Исправленные стили аудиоплеера */
+.undertale-audio audio {
+    display: none; /* Скрываем нативный элемент */
+}
+
+.play-btn {
+    width: 40px;
+    height: 40px;
+    background: #00ffff;
+    border: 3px solid #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-family: 'Press Start 2P', cursive;
+    color: #000;
+    transition: all 0.2s;
+}
+
+.play-btn:hover {
+    background: #9b30ff;
+    color: #fff;
+}
+
+.player-btn {
+    padding: 5px;
+    margin: 0 2px;
+    min-width: 30px;
+}
+
+.progress-container {
+    flex-grow: 1;
+    height: 12px;
+    background: #000;
+    border: 2px solid #fff;
+    cursor: pointer;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    background: #00ffff;
+    width: 0;
+    transition: width 0.1s linear;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .container {
+        width: 95%;
+        padding: 10px;
+        border-width: 3px;
+    }
+
+    .undertale-title {
+        font-size: 16px;
+        padding: 8px;
+        margin: 10px 0;
+    }
+
+    .post-form, .reply-form {
+        padding: 10px;
+        margin: 15px 0;
+    }
+
+    .post-form input,
+    .post-form textarea,
+    .reply-form textarea {
+        padding: 8px;
+        font-size: 8px;
+    }
+
+    .post-form button, 
+    .reply-form button,
+    .toggle-btn {
+        padding: 8px 15px;
+        font-size: 8px;
+    }
+
+    .media {
+        max-width: 100%;
+        margin: 8px 0;
+    }
+
+    /* Аудиоплеер */
+    .undertale-audio {
+        padding: 10px;
+    }
+
+    .play-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+    .rewind-btn, .forward-btn {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .progress-container {
+        height: 10px;
+    }
+
+    .time-display {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    .thread-creation h2 {
+        font-size: 12px;
+    }
+
+    .user-id {
+        font-size: 8px;
+    }
+
+    .time {
+        font-size: 6px;
+    }
+
+    .storage-text {
+        font-size: 8px;
+    }
+
+    /* Оптимизация тредов */
+    .thread {
+        padding: 8px;
+        margin: 15px 0;
+    }
+
+    .post {
+        margin: 10px 0;
+        padding: 8px;
+    }
+
+    /* Уменьшение отступов форм */
+    .post-form input, 
+    .post-form textarea,
+    .reply-form textarea {
+        margin: 5px 0;
+        padding: 6px;
+    }
+
+    /* Адаптация кнопок */
+    .player-btn {
+        min-width: 25px;
+        padding: 3px;
+    }
+
+    /* Оптимизация прогресс-бара */
+    .progress-container {
+        margin: 0 5px;
+    }
+}
+
+/* Touch-оптимизация */
+@media (hover: none) and (pointer: coarse) {
+    .post-form button, 
+    .reply-form button,
+    .toggle-btn {
+        min-width: 60px;
+        padding: 12px 20px;
+    }
+
+    .media {
+        touch-action: manipulation;
+    }
+
+    .progress-container {
+        height: 15px;
+    }
+
+    .play-btn {
+        width: 45px;
+        height: 45px;
+    }
+}
+.mobile-optimized input[type="file"] {
+    font-size: 10px;
+}
+
+@media (max-width: 480px) {
+    .mobile-optimized input[type="file"]::file-selector-button {
+        padding: 6px;
+        font-size: 8px;
+    }
+}
+
+/* Отключение эффектов для мобильных */
+@media (max-width: 768px), (hover: none) and (pointer: coarse) {
+    body {
+        animation: none !important;
+        text-shadow: none !important;
+    }
+    
+    body::after {
+        content: none !important;
+        animation: none !important;
+    }
+    
+    .container {
+        box-shadow: none !important;
+    }
+    
+    .undertale-title {
+        text-shadow: 2px 2px #9b30ff !important;
+    }
+    
+    a.board-link:hover {
+        animation: none !important;
+    }
+}
