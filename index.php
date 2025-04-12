@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['create_board'])) {
     </div>
     
     
-        <h2 class="undertale-title">Федотов Владислав Игоревич</h2>
+        <h2 class="undertale-title">LOL</h2>
         
         <div class="container">
         
